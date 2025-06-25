@@ -1,3 +1,20 @@
+.test {
+  background-color: blueviolet;
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+
 .App {
   text-align: center;
 }

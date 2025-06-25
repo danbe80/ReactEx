@@ -33,3 +33,74 @@ my-app => 본인이 지정한 파일 이름
 ```
 
 class 속성이 리액트에선 'className'으로 쓰인다
+
+# jsx 문법
+변수를 태그안에서 사용하는 방법
+```tsx
+    let name = 'Hello';
+
+
+    <div className='App'>
+      <h1>{name}</h1>
+    </div>
+```
+
+## Inline Style ( 인라인 스타일 )
+
+```tsx
+const style = {
+    backgroundColor: 'black',
+    color: 'white',
+    fontSize: '48px',
+    fontWeight: 'bold',
+    padding: '20px'
+  }
+  return (
+    <div style={style}>
+      <h1 className='test'>Hello, {
+      name === '리액트' ? (<h1>YES</h1>): (<h1>NO</h1>)
+    }
+      !!</h1>
+      <p>반갑습니다.</p>
+    </div>
+  );
+```
+또는
+```tsx
+  return (
+    <div style={{
+    backgroundColor: 'black',
+    color: 'white',
+    fontSize: '48px',
+    fontWeight: 'bold',
+    padding: '20px'
+  }}>
+      <h1 className='test'>Hello, {
+      name === '리액트' ? (<h1>YES</h1>): (<h1>NO</h1>)
+    }
+      !!</h1>
+      <p>반갑습니다.</p>
+    </div>
+  );
+
+```
+
+jsx 에서는 닫는 태크가 필요
+
+```tsx
+    <br></br>
+```
+이 방법을 아래와 같이 바꿀 수 있다.
+```tsx
+    <br />
+```
+
+# 주석 작성법
+```js
+/*
+  작성자 : 
+  작성일 :
+  내용 : 기능에 대한 내용
+*/
+```
+
