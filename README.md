@@ -159,3 +159,5 @@ console.log(b === a); // true
 let c = [...a]; // 깊은 복사 
 console.log(c === a); // false
 ```
+
+# Props (프롭스)

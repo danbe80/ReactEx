@@ -1,12 +1,16 @@
 import './App.css';
-import Clock from './Timer';
+import MyWeather from './MyWeather';
+// import Clock from './Timer';
 import TodoList from './Todolist';
 
 function App() {
   return (
     <div className='container'>
       <TodoList />
-      <Clock />
+      {/* <Clock /> */}
+      <MyWeather weather='비'>
+        일기예보
+      </MyWeather>
     </div>
   );
 }

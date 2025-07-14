@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import TodoModal from './TodoModal';
 
 type Todo = {
     id: number;
@@ -30,6 +31,9 @@ const TodoList: React.FC = () => {
     ]);
 
     const [newTodo, setNewTodo] = useState<string>('');
+
+    const [showDetail, setShowDetail] = useState<boolean>(false);
+    const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
     
     const handleCheckedChange = (itemId: number) => {
         setTodos((prevItems) => 
@@ -48,6 +52,22 @@ const TodoList: React.FC = () => {
             }])
             setNewTodo('');
         }
+    }
+
+    const removeTodo = (itemId: number) => {
+        setTodos((prevItems) => 
+            prevItems.filter((item) => item.id !== itemId)
+        )
+    }
+
+    const handleTodoClick = (todo: Todo) => {
+        setShowDetail(true);
+        setSelectedTodo(todo);
+    }
+    
+    const handleCloseDetail = () => {
+        setShowDetail(false);
+        setSelectedTodo(null);
     }
 
     return(
@@ -69,11 +89,15 @@ const TodoList: React.FC = () => {
                             todos.map((todo) =>(
                                  <li key={todo.id}>
                                     <input type="checkbox" checked={todo.isChecked} onChange={() => handleCheckedChange(todo.id)}/>
-                                    <span>
+                                    <span onClick={() => handleTodoClick(todo)}>
                                         {
                                             todo.isChecked ? <del>{todo.text}</del> : <>{todo.text}</>
                                         }
                                     </span>
+                                    <button
+                                    onClick={() => removeTodo(todo.id)}
+                                    className='del-button'
+                                    >삭제</button>
                                 </li>
                                 ))
                         }
@@ -81,6 +105,7 @@ const TodoList: React.FC = () => {
                 </div>
                 
             </div>
+            <TodoModal show={showDetail} todo={selectedTodo} handelClose={handleCloseDetail}/>
         </div>
         
     )

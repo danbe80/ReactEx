@@ -24,6 +24,18 @@
   text-align: center;
 }
 
+.del-button {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
 
 .App {
   text-align: center;
