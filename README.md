@@ -147,3 +147,15 @@ const FuncCom = () => {
     )
 }
 ```
+
+## 얕은 복사와 깊은 복사
+
+```js
+let a = [1,2,3];
+
+let b = a; // 얕은 복사
+console.log(b === a); // true
+
+let c = [...a]; // 깊은 복사 
+console.log(c === a); // false
+```
