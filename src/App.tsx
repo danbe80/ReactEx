@@ -1,18 +1,12 @@
 import './App.css';
-import ClassCom from './ClassCam';
-import FuncCom from './FuncCom';
-
-/*
-  작성자 : 
-  작성일 :
-  내용 : 기능에 대한 내용
-*/
+import Clock from './Timer';
+import TodoList from './Todolist';
 
 function App() {
   return (
     <div className='container'>
-      <ClassCom />
-      <FuncCom />
+      <TodoList />
+      <Clock />
     </div>
   );
 }
