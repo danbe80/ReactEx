@@ -104,3 +104,46 @@ jsx 에서는 닫는 태크가 필요
 */
 ```
 
+# 함수형 컴포넌트와 클래스형 컴포넌트
+
+```tsx
+import { Component } from "react";
+
+class ClassCom extends Component{
+    render() {
+        return (
+            <div>
+                클래스형 컴포넌트
+            </div>
+        )
+    }
+}
+
+export default ClassCom;
+
+```
+
+```tsx
+function FuncCom() {
+    return(
+        <div>
+            함수형 컴포넌트
+        </div>
+    )
+}
+
+export default FuncCom;
+```
+state와 라이프사이클 사용이 불가능 했지만 현재 16버전에선 수정이 되었다.
+현재 권장되는 방법은 함수형 컴포넌트이다.
+
+화살표 함수형 컴포넌트 사용 ( 함수형이랑 같음 )
+```tsx
+const FuncCom = () => {
+    return(
+        <div>
+            화살표 함수형 컴포넌트
+        </div>
+    )
+}
+```
